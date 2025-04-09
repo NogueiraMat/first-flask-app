@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Bem-vindo, {{ username }}!</h2>
+        <p>Você está logado e pode acessar o conteúdo exclusivo da sua conta.</p>
+        
+        <form action="/logout" method="POST">
+        <button class="logout-button" type="submit">Sair</button>
+        </form>

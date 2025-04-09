@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+       window.onload = function() {
+            setTimeout(function() {
+                var errorMessage = document.getElementById("error-message");
+                if (errorMessage) {
+                    errorMessage.style.display = "none";
+                }
+            }, 1500);
+        };
+    </script>
+</head>
+<body>
+
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <div class="input-group">
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Entrar</button>
+                </div>
+                {% if error %}
+                <p id="error-message" style="color: red;">Falha ao realizar o login!</p>
+                {% endif %}
+            </form>
+        </div>
+</body>
+</html>
